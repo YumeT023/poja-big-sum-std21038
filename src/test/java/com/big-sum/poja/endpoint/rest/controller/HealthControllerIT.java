@@ -1,12 +1,12 @@
-package com.big-sum.poja.endpoint.rest.controller;
+package com.bigsum.poja.endpoint.rest.controller;
 
-import static com.big-sum.poja.endpoint.rest.controller.health.PingController.OK;
+import static com.bigsum.poja.endpoint.rest.controller.health.PingController.OK;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.big-sum.poja.PojaGenerated;
-import com.big-sum.poja.conf.FacadeIT;
-import com.big-sum.poja.endpoint.rest.controller.health.HealthDbController;
-import com.big-sum.poja.endpoint.rest.controller.health.PingController;
+import com.bigsum.poja.PojaGenerated;
+import com.bigsum.poja.conf.FacadeIT;
+import com.bigsum.poja.endpoint.rest.controller.health.HealthDbController;
+import com.bigsum.poja.endpoint.rest.controller.health.PingController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

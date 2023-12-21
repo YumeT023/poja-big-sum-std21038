@@ -1,4 +1,4 @@
-package com.big-sum.poja.endpoint.event;
+package com.bigsum.poja.endpoint.event;
 
 import static java.util.UUID.randomUUID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,10 +8,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import com.big-sum.poja.PojaGenerated;
-import com.big-sum.poja.conf.FacadeIT;
-import com.big-sum.poja.endpoint.event.gen.UuidCreated;
-import com.big-sum.poja.repository.DummyUuidRepository;
+import com.bigsum.poja.PojaGenerated;
+import com.bigsum.poja.conf.FacadeIT;
+import com.bigsum.poja.endpoint.event.gen.UuidCreated;
+import com.bigsum.poja.repository.DummyUuidRepository;
 
 @PojaGenerated
 class EventConsumerIT extends FacadeIT {
@@ -30,7 +30,7 @@ class EventConsumerIT extends FacadeIT {
         List.of(
             new EventConsumer.AcknowledgeableTypedEvent(
                 new EventConsumer.TypedEvent(
-                    "com.big-sum.poja.endpoint.event.gen.UuidCreated", payloadReceived),
+                    "com.bigsum.poja.endpoint.event.gen.UuidCreated", payloadReceived),
                 () -> {})));
 
     Thread.sleep(2_000);

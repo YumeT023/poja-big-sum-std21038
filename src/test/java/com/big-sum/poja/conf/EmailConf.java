@@ -1,7 +1,7 @@
-package com.big-sum.poja.conf;
+package com.bigsum.poja.conf;
 
 import org.springframework.test.context.DynamicPropertyRegistry;
-import com.big-sum.poja.PojaGenerated;
+import com.bigsum.poja.PojaGenerated;
 
 @PojaGenerated
 public class EmailConf {

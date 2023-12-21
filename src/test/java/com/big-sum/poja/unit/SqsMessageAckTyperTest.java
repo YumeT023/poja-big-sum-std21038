@@ -1,4 +1,4 @@
-package com.big-sum.poja.unit;
+package com.bigsum.poja.unit;
 
 import static java.util.UUID.randomUUID;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,9 +14,9 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import com.big-sum.poja.conf.FacadeIT;
-import com.big-sum.poja.endpoint.event.EventConsumer;
-import com.big-sum.poja.endpoint.event.gen.UuidCreated;
+import com.bigsum.poja.conf.FacadeIT;
+import com.bigsum.poja.endpoint.event.EventConsumer;
+import com.bigsum.poja.endpoint.event.gen.UuidCreated;
 import software.amazon.awssdk.services.sqs.SqsClient;
 import software.amazon.awssdk.services.sqs.model.DeleteMessageRequest;
 
@@ -49,7 +49,7 @@ public class SqsMessageAckTyperTest extends FacadeIT {
     var uuidCreated = UuidCreated.builder().uuid(uuid).build();
     var payload = om.readValue(om.writeValueAsString(uuidCreated), UuidCreated.class);
     var typedEvent =
-        new EventConsumer.TypedEvent("com.big-sum.poja.endpoint.event.gen.UuidCreated", payload);
+        new EventConsumer.TypedEvent("com.bigsum.poja.endpoint.event.gen.UuidCreated", payload);
 
     var actualAcknowledgeableEvents = subject.apply(List.of(sqsMessageFrom(typedEvent)));
     var actualAcknowledgeableEvent = actualAcknowledgeableEvents.get(0);
@@ -66,7 +66,7 @@ public class SqsMessageAckTyperTest extends FacadeIT {
     var payload = om.readValue(om.writeValueAsString(uuidCreated), UuidCreated.class);
     var unknownTypenameTypedEvent = new EventConsumer.TypedEvent(UNKNOWN_TYPENAME, payload);
     var validTypedEvent =
-        new EventConsumer.TypedEvent("com.big-sum.poja.endpoint.event.gen.UuidCreated", payload);
+        new EventConsumer.TypedEvent("com.bigsum.poja.endpoint.event.gen.UuidCreated", payload);
 
     var actualAcknowledgeableEvents =
         subject.apply(
